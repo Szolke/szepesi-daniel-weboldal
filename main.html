@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szepesi Dániel – Life Coach & Holisztikus Terapeuta</title>
+    <meta name="description" content="Life coaching, kineziológia One Brain módszer és Recall Healing – Szepesi Dániel holisztikus fejlesztő és terapeuta.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #logout-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            background: rgba(45,74,45,0.85);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: Lato, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s;
+        }
+        #logout-btn:hover { background: rgba(74,124,89,0.95); }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGÁCIÓ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#hero">Szepesi Dániel</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü megnyitása">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#coaching">Life Coaching</a></li>
+                <li><a href="#kinezio">Kineziológia</a></li>
+                <li><a href="#recall">Recall Healing</a></li>
+                <li><a href="#metafora">A Kertész</a></li>
+                <li><a href="#rolam">Rólam</a></li>
+                <li><a href="#kapcsolat" class="nav-cta">Kapcsolat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SZEKCIÓ -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-eyebrow fade-in">Life Coach & Holisztikus Terapeuta</p>
+                <h1 class="fade-in delay-1">Művelnünk kell <em>kertjeinket</em></h1>
+                <p class="hero-lead fade-in delay-2">
+                    Képzeld el, hogy a jelened és a jövőd egy gyönyörű, virágzó kert. 
+                    Három módszerrel segítelek elérni, hogy valódi, élő oázist teremts 
+                    magadnak – a gyökerektől a virágzásig.
+                </p>
+                <div class="hero-ctas fade-in delay-3">
+                    <a href="#kapcsolat" class="btn btn-primary">Foglalj időpontot</a>
+                    <a href="#rolam" class="btn btn-secondary">Ismerj meg</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in delay-2">
+                <div class="hero-img-wrapper">
+                    <img src="images/profile.jpg" alt="Szepesi Dániel" onerror="this.parentElement.classList.add('no-image')">
+                    <div class="hero-img-decoration"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Görgess le</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- MÓDSZEREK ÁTTEKINTÉS -->
+    <section id="modszerek-overview">
+        <div class="container">
+            <div class="overview-cards">
+                <a href="#coaching" class="overview-card fade-in">
+                    <div class="overview-icon">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M13 20 L17 24 L27 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Life Coaching</h3>
+                    <p>Célok, elakadások, belső potenciál</p>
+                </a>
+                <a href="#kinezio" class="overview-card fade-in delay-1">
+                    <div class="overview-icon">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 5 C12 5 6 11 6 19 C6 27 12 35 20 35 C28 35 34 27 34 19 C34 11 28 5 20 5Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M20 5 L20 35 M6 19 L34 19" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/>
+                        </svg>
+                    </div>
+                    <h3>Kineziológia</h3>
+                    <p>One Brain módszer, egyensúly</p>
+                </a>
+                <a href="#recall" class="overview-card fade-in delay-2">
+                    <div class="overview-icon">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 34 L20 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M14 16 C14 12 26 12 26 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M11 22 C11 17 29 17 29 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M17 34 L23 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Recall Healing</h3>
+                    <p>Gyökerek, minták, tudatalatti</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFE COACHING SZEKCIÓ -->
+    <section id="coaching" class="section-light">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">01 — Módszer</span>
+                <h2>Life Coaching</h2>
+                <p class="section-subtitle">Mély, személyre szabott önismereti és jövőorientált fejlesztő folyamat</p>
+            </div>
+            <div class="section-content two-col">
+                <div class="content-text fade-in">
+                    <p class="lead-text">A life coaching egy mély, személyre szabott önismereti és jövőorientált fejlesztő folyamat, ahol a kliens teljes, osztatlan figyelmet kap. Ez egy egyenrangú partnerségen alapuló közös felfedezés: a kliens hozza a kérdést vagy elakadást, a coach pedig segít felszínre hozni a válaszokat és a belső potenciált.</p>
+                    <p>A folyamat nem kész válaszokat vagy tanácsokat ad, hanem cselekvésorientált megközelítéssel segít kilépni a megszokott gondolkodási sémákból, hogy új utakat és megoldásokat találj.</p>
+
+                    <h3 class="content-subtitle">🧠 Észlelés három szinten</h3>
+                    <div class="three-levels">
+                        <div class="level-item">
+                            <div class="level-icon">E</div>
+                            <div class="level-text">
+                                <strong>Elme – Megértés</strong>
+                                <p>Strukturált kérdésekkel tisztázza a jövőbeli célokat és lebontja a korlátozó hiedelmeket.</p>
+                            </div>
+                        </div>
+                        <div class="level-item">
+                            <div class="level-icon">É</div>
+                            <div class="level-text">
+                                <strong>Érzelmek – Megélés</strong>
+                                <p>Segít azonosítani, tudatosítani és átérezni a belső mozgatórugókat vagy gátakat.</p>
+                            </div>
+                        </div>
+                        <div class="level-item">
+                            <div class="level-icon">T</div>
+                            <div class="level-text">
+                                <strong>Test – Megjelenítés</strong>
+                                <p>Biztonságos térben a coach segít megjeleníteni a témádat, így a változás fizikai szinten is rögzül.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-side fade-in delay-1">
+                    <div class="info-card">
+                        <h3>🎯 Mire jó a folyamat?</h3>
+                        <ul class="benefit-list">
+                            <li>
+                                <span class="benefit-icon">→</span>
+                                <div>
+                                    <strong>Elakadások feloldása</strong>
+                                    <p>Ha döntési helyzet előtt állsz, megakadtál egy kapcsolatban vagy nehéz élethelyzetben.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">→</span>
+                                <div>
+                                    <strong>Önismeret mélyítése</strong>
+                                    <p>Ha szeretnél közelebb kerülni önmagadhoz és tisztábban látni a vágyaidat.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">→</span>
+                                <div>
+                                    <strong>Erőforrások aktiválása</strong>
+                                    <p>A belső erő, a rejtett tehetség és a kreativitás felszínre hozatala.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">→</span>
+                                <div>
+                                    <strong>Célmegvalósítás</strong>
+                                    <p>Konkrét, mérhető akcióterv kidolgozása a jelenlegi állapotból kiindulva.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box">
+                        <p>A coaching azért rendkívül hatékony, mert a megoldások nem kívülről érkező sablonok. Mivel a válaszokat te magad dolgozod ki, sokkal nagyobb elkötelezettséggel teszed meg a valós, gyakorlati lépéseket is.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KINEZIOLÓGIA SZEKCIÓ -->
+    <section id="kinezio" class="section-dark">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">02 — Módszer</span>
+                <h2>Kineziológia – One Brain</h2>
+                <p class="section-subtitle">Holisztikus stresszoldó rendszer a bal és jobb agyfélteke összehangolására</p>
+            </div>
+            <div class="section-content two-col reverse">
+                <div class="content-side fade-in">
+                    <div class="method-principle">
+                        <h3>A módszer alapelve</h3>
+                        <p>A koncepció szerint stressz vagy trauma hatására a két agyfélteke közötti kommunikáció blokkolódik. A logikus, elemző bal agyfélteke és a kreatív, érzelmi jobb agyfélteke integrációja megszűnik, így az egyén a múltbeli sémák alapján automatikusan reagál, ahelyett, hogy új, szabad választásokat hozna.</p>
+                        <p>A módszer célja ennek az egységnek – az „Egy Agynak" – a visszaállítása.</p>
+                    </div>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <h4>Izomtesztelés</h4>
+                            <p>Biofeedback a tudatalatti eléréséhez, kikerülve a tudatos elme magyarázatait.</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Korkeresés</h4>
+                            <p>Az eredeti érzelmi trauma pontos életkorának meghatározása izomteszteléssel.</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Viselkedési Barométer</h4>
+                            <p>A jelenlegi és múltbeli negatív érzelmi állapot, valamint a vágyott cél beazonosítása.</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Szerkezet / Funkció</h4>
+                            <p>Az egyén veleszületett működési és stresszreakciós mintáinak elemzése.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-text fade-in delay-1">
+                    <h3 class="content-subtitle">A korrekció folyamata</h3>
+                    <p>Miután fény derült a kiváltó okra és a hozzá kapcsolódó érzelmekre, gyengéd korrekciós technikákat alkalmazok. Ezek lehetnek egyszerű mozgásos gyakorlatok, vizualizációk, finom energetikai érintések vagy a szemmozgások integrációja.</p>
+                    <p>A folyamat végén a kliens gyakran kap otthoni, megerősítő házi feladatokat az új energetikai egyensúly rögzítésére.</p>
+
+                    <h3 class="content-subtitle">Miben segíthet?</h3>
+                    <div class="application-list">
+                        <div class="application-item">
+                            <span>Tanulási nehézségek és dyslexia</span>
+                        </div>
+                        <div class="application-item">
+                            <span>Önértékelési problémák, önbizalomhiány</span>
+                        </div>
+                        <div class="application-item">
+                            <span>Érzelmi és kapcsolati elakadások</span>
+                        </div>
+                        <div class="application-item">
+                            <span>Fóbiák, szorongás és krónikus stressz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECALL HEALING SZEKCIÓ -->
+    <section id="recall" class="section-warm">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">03 — Módszer</span>
+                <h2>Recall Healing</h2>
+                <p class="section-subtitle">Emlékezés általi gyógyulás – a betegségek és elakadások mélyebb összefüggései</p>
+            </div>
+            <div class="section-content">
+                <div class="recall-principle fade-in">
+                    <div class="principle-quote">
+                        <blockquote>„Ami nem jut el a tudatig, az biológiai formát ölt."</blockquote>
+                    </div>
+                    <p>A Recall Healing szerint a betegség nem a szervezet hibája vagy véletlenszerű meghibásodás, hanem az agy túlélési programja egy biológiai sokkra. Ha a páciens tudatosítja és kibeszéli a konfliktust, a testnek már nincs szüksége a fizikai tünetre a túléléshez, így elindulhat a valódi gyógyulás.</p>
+                </div>
+                <div class="pillars-grid fade-in delay-1">
+                    <div class="pillar-card">
+                        <div class="pillar-number">01</div>
+                        <h3>Biológiai törvényszerűségek</h3>
+                        <p>Minden szervünk egy meghatározott típusú érzelmi konfliktushoz kapcsolódik. A feltárás során ezeket azonosítjuk.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-number">02</div>
+                        <h3>Projekt Cél program</h3>
+                        <p>Kiemelt figyelem a születés előtti 9 hónap, a születés és az első életév eseményeire – ezek tudatalatti forgatókönyvként hathatnak.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-number">03</div>
+                        <h3>Transzgenerációs minták</h3>
+                        <p>A meg nem oldott családi traumák generációkon át öröklődnek. Az utódok tudat alatt ismétlik a felmenők sorsát.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-number">04</div>
+                        <h3>Életút Idővonala</h3>
+                        <p>A ciklikusan ismétlődő események matematikai pontosságú elemzése, amely segít rávilágítani az első, programozó jellegű élményre.</p>
+                    </div>
+                </div>
+                <div class="recall-footer fade-in delay-2">
+                    <div class="recall-process">
+                        <h3>A konzultáció</h3>
+                        <p>A Recall Healing egyfajta „biológiai detektívmunkaként" működik. Célzott kérdésekkel, a kliens élettörténetének, családfájának és orvosi diagnózisának elemzésével segítek megtalálni azt a konkrét pillanatot és érzelmet, amely a tünetet elindította. A gyógyulás kulcsa a megértés, az őszinte szembenézés és az érzelmi feszültség elengedése.</p>
+                    </div>
+                    <div class="recall-helps">
+                        <h3>Miben segít?</h3>
+                        <ul>
+                            <li>Krónikus és daganatos betegségek lelki hátterének feltárásában</li>
+                            <li>Ismétlődő élethelyzeti kudarcok feloldásában</li>
+                            <li>Gyermekkori viselkedési és tanulási zavarok mögött álló stressz azonosításában</li>
+                            <li>Megmagyarázhatatlan félelmek, fóbiák és depresszív állapotok kezelésében</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KERTÉSZ METAFORA SZEKCIÓ -->
+    <section id="metafora" class="section-garden">
+        <div class="garden-overlay"></div>
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">A három módszer együtt</span>
+                <h2>„Művelnünk kell kertjeinket"</h2>
+                <p class="section-subtitle">Ez a három módszer a legtapasztaltabb kertész- és tájépítész csapatod</p>
+            </div>
+            <div class="garden-intro fade-in">
+                <p>Képzeld el, hogy a jelened és a jövőd egy gyönyörű, virágzó kert, ahol szeretnél végre megpihenni, élvezni a napsütést és leszüretelni a lédús gyümölcsöket. De a valóságban a növényeid folyton elszáradnak, felveri a gaz a birtokot, a talaj pedig csontszáraz és repedezett.</p>
+            </div>
+            <div class="garden-steps">
+                <div class="garden-step fade-in">
+                    <div class="step-badge">1. lépés</div>
+                    <div class="step-icon">🌱</div>
+                    <div class="step-method">Recall Healing</div>
+                    <h3>Talajvizsgálat</h3>
+                    <p>Hiába locsolod a növény felszínét, ha a mélyben valami rágja a gyökerét. A Recall Healing segít leásni a föld alá, és megmutatja, hogy a mai elakadásaid milyen mélyen fekvő, régi rétegekből táplálkoznak.</p>
+                </div>
+                <div class="step-arrow fade-in delay-1">→</div>
+                <div class="garden-step fade-in delay-1">
+                    <div class="step-badge">2. lépés</div>
+                    <div class="step-icon">🌿</div>
+                    <div class="step-method">Kineziológia</div>
+                    <h3>Gyomirtás & talajlazítás</h3>
+                    <p>Ha már látod, miért nem terem a föld, szabaddá kell tenni a terepet. Az izomteszt segítségével pontosan odanyúl, ahol a legsűrűbb a gaz, és gyökerestül húzza ki a régi fájdalmat és a beragadt stresszt.</p>
+                </div>
+                <div class="step-arrow fade-in delay-2">→</div>
+                <div class="garden-step fade-in delay-2">
+                    <div class="step-badge">3. lépés</div>
+                    <div class="step-icon">🌸</div>
+                    <div class="step-method">Life Coaching</div>
+                    <h3>Parkosítás & veteményezés</h3>
+                    <p>Most, hogy a föld tiszta és tele van tápanyaggal, eljött az idő, hogy kitaláld, mit szeretnél termeszteni. A coaching azt kérdezi: „Milyen virágokat szeretnél látni? Milyen gyümölcsöket akarsz szüretelni?"</p>
+                </div>
+            </div>
+            <div class="garden-conclusion fade-in">
+                <p>Ezzel a hármassal nemcsak műanyag virágokkal díszíted fel a kertedet, hanem valódi, élő oázist teremtesz. A Recall Healinggel átvilágítod a talajhibákat, a kineziológiával kitisztítod a múlt béklyóit, a coachinggal pedig felneveled azt a virágzó jövőt, amelyben végre büszkén és boldogan élhetsz.</p>
+                <a href="#kapcsolat" class="btn btn-primary">Kezdjük el együtt</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RÓLAM SZEKCIÓ -->
+    <section id="rolam" class="section-light">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Bemutatkozás</span>
+                <h2>Rólam</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <div class="about-img-wrapper">
+                        <img src="images/profile.jpg" alt="Szepesi Dániel" onerror="this.parentElement.classList.add('no-image')">
+                    </div>
+                </div>
+                <div class="about-text fade-in delay-1">
+                    <h3>Szepesi Dániel</h3>
+                    <p class="about-title">Life Coach & Holisztikus Terapeuta</p>
+                    <p>Hiszem, hogy minden emberben ott rejlik a változás és a növekedés képessége. Munkám során három egymást kiegészítő módszerrel segítem a klienseimet – a Recall Healing mélységeitől a kineziológia precizitásán át a life coaching jövőorientált szemléletéig.</p>
+                    <p>A kertész metaforája nem véletlen: ahogy egy gondos kertész ismeri a talajt, a gyökereket és a növekedés feltételeit, én is pontosan ugyanígy közelítek az emberi fejlődéshez. A gyökerektől a virágzásig – ez az én küldetésem.</p>
+                    <div class="about-methods">
+                        <span>Life Coaching</span>
+                        <span>Kineziológia – One Brain</span>
+                        <span>Recall Healing</span>
+                    </div>
+                    <a href="#kapcsolat" class="btn btn-outline">Vedd fel velem a kapcsolatot</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KAPCSOLAT SZEKCIÓ -->
+    <section id="kapcsolat" class="section-contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info fade-in">
+                    <span class="section-label">Kapcsolatfelvétel</span>
+                    <h2>Foglalj időpontot</h2>
+                    <p>Ha szeretnél elindulni a változás útján, írj nekem! Szívesen válaszolok kérdéseitekre, és megbeszéljük, melyik módszer illik a legjobban a te helyzetedhez.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span>email@szepesidaniel.hu</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>+36 xx xxx xxxx</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper fade-in delay-1">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Neved</label>
+                            <input type="text" id="name" name="name" placeholder="Teljes neved" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail cím</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Téma</label>
+                            <select id="subject" name="subject">
+                                <option value="">Válassz módszert...</option>
+                                <option value="coaching">Life Coaching</option>
+                                <option value="kinezio">Kineziológia – One Brain</option>
+                                <option value="recall">Recall Healing</option>
+                                <option value="egyeb">Egyéb kérdés</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Üzeneted</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Írd le, miben segíthetek..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Üzenet küldése</button>
+                        <div class="form-success" id="formSuccess">
+                            <span>✓</span> Köszönöm az üzenetedet! Hamarosan jelentkezem.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-name">Szepesi Dániel</p>
+                    <p class="footer-tagline">Life Coach & Holisztikus Terapeuta</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#coaching">Life Coaching</a>
+                    <a href="#kinezio">Kineziológia</a>
+                    <a href="#recall">Recall Healing</a>
+                    <a href="#metafora">A Kertész</a>
+                    <a href="#kapcsolat">Kapcsolat</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Szepesi Dániel. Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <button id="logout-btn" onclick="logout()">🔒 Kilépés</button>
+    <script>
+        const HASH = "0004cb0a6293ff7fc3608c7c60aabe5a8d784ca93c0cc8c08398ad3a3e0acd52";
+        if (sessionStorage.getItem("auth") !== HASH) {
+            window.location.href = "index.html";
+        }
+        function logout() {
+            sessionStorage.removeItem("auth");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
