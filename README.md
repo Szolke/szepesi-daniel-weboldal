@@ -1,8 +1,9 @@
 # Szepesi Dániel – Holisztikus Fejlesztés Weboldala
 
 Egy holisztikus fejlesztéssel, önismerettel és gyógyulással foglalkozó szakember bemutatkozó oldala.
-Az oldal három fő módszert (Life Coaching, Kineziológia, Recall Healing) mutat be egy összekötő
-kertész metaforán keresztül.
+Az oldal egy személyes "Rólam" bemutatkozással indul, majd három fő módszert (Life Coaching, Kineziológia,
+Recall Healing) mutat be egy összekötő kertész metaforán keresztül, kiegészülve egy önismeret/tanulmányok
+szekcióval és egy kapcsolatfelvételi résszel.
 
 ## Deployment
 

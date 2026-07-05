@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.2.0] – 2026-07-05 – Navigáció, Rólam szekció, footer bővítés
+
+### Added
+- Új "Önismeret és tanulmányok" menüpont és `#tanulmanyok` stub szekció (A kert és Kapcsolat között) – egyelőre csak cím, tartalom később kerül bele
+- Footer bővítve: Email (mailto link) + Follow (Facebook/Instagram/YouTube ikonok, inline SVG, egyelőre `#` placeholder linkekkel)
+- `.quote-bubble` komponens (idézet buborék, keretes-kerekített kártya, jelvény nélkül) a hero "Rólam" szekciójában
+
+### Changed
+- Navbar: 3 külön link (Coaching/Kineziológia/Recall Healing) összevonva egyetlen "Módszerem" linkké (a #coaching-ra mutat)
+- Navbar: `position: sticky` → `position: fixed`, mindig a képernyőn marad; a `#hero` kompenzáló `margin-top`-ot kapott (60px desktop, 130px/150px mobil breakpointokon)
+- Hero szekció tartalma lecserélve: a korábbi kertész-metafora bevezető helyett "Rólam" személyes bemutatkozás (idézet + 3 bekezdés)
+- `.intro` bekezdések: `text-align: justify` (korábban nem volt igazítás megadva) és `margin: 0 auto` (korábban hiányzott, ezért balra tapadt a blokk a konténerben ahelyett, hogy középre igazodott volna)
+
+### Fixed
+- Kritikus reggresszió: az `#tanulmanyok` beszúrása miatt a `#contact` páratlan pozícióba csúszott, és örökölte a generikus "3./5./7. szekció sötét theme" szabály fehér szövegszínét → a kapcsolat-szekció szövege (Email/Telefon/Hely) fehér lett fehér/krém háttéren, láthatatlanná vált. Javítás: `#coaching`, `#recall`, `#contact`, `#tanulmanyok` mostantól explicit `color: var(--color-text)`-et kap, függetlenül a szekció-sorrendtől.
+
+### Verified
+- Mind a 7 szekció (`#hero`, `#coaching`, `#kinezio`, `#recall`, `#garden-metaphor`, `#tanulmanyok`, `#contact`) saját `background` + `color` párost állít be, nem függ a `nth-of-type` sorrendtől
+- PROJECT_BRIEF.md, DESIGN_SYSTEM.md, IMAGE_MANIFEST.md, README.md frissítve az új nav-struktúrával, hero-tartalommal, footer- és quote-bubble komponensekkel
+
+### Ismert eltérés
+- A hero.jpg AI-generálási promptja és alt szövege még mindig kertész-metafora témájú, miközben a szekció szövege már "Rólam" bemutatkozás – lásd IMAGE_MANIFEST.md figyelmeztetését, döntés szükséges a kép témájáról
+
 ## [1.1.0] – 2026-07-05 – Színvilág átállítás
 
 ### Changed

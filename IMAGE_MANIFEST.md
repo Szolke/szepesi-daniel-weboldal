@@ -4,12 +4,14 @@
 
 | Kép | Fájlnév | Méret | Alt szöveg (a tényleges index.html szerint) | Szekció | Státusz |
 |-----|---------|-------|-----------|---------|---------|
-| Hero | hero.jpg | 1920×1080 | Virágzó kert napfényben | #hero | ⏳ Generálni |
+| Hero | hero.jpg | 1920×1080 | Virágzó kert napfényben | #hero | ⏳ Generálni ⚠️ |
 | Life Coaching | coaching.jpg | 1200×800 | Life coaching ülés meleg, bizalmas légkörben | #coaching | ⏳ Generálni |
 | Kineziológia | kinezio.jpg | 1200×800 | Kineziológiai kezelés, izomtesztelés közben | #kinezio | ⏳ Generálni |
 | Recall Healing | recall.jpg | 1200×800 | Nyugodt konzultációs tér a Recall Healing üléshez | #recall | ⏳ Generálni |
 | Kertész metafora | garden-metaphor.jpg | 1600×800 | Gondozott, virágzó kert szimbolikus fényben | #garden-metaphor | ⏳ Generálni |
 | Profil | profile.jpg | 400×400 | Szepesi Dániel | #contact (a .contact-info dobozban) | ✅ Rendelkezésre áll |
+
+⚠️ **2026-07-05: tartalmi ellentmondás a hero.jpg-nél** – a `#hero` szekció szövege azóta "Rólam" személyes bemutatkozásra cserélődött (lásd PROJECT_BRIEF.md), de a hero.jpg AI-promptja és alt szövege még mindig a kertész-metafora virágzó kert témáját írja le. Mielőtt legenerálnátok ezt a képet, érdemes eldönteni: marad a kert-témájú kép (csak dekoratív háttér, nem kell illeszkednie szó szerint a szöveghez), vagy inkább egy személyesebb/portré jellegű kép illene a "Rólam" tartalomhoz.
 
 ---
 

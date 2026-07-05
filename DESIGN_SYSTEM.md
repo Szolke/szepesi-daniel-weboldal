@@ -123,6 +123,35 @@ A projekt vizuális és komponens-alapú szabályrendszere.
 - `.pillar` (#recall): ugyanaz mint `.level`, plusz `border-top: 4px solid var(--color-primary)`
 - `.step` (#garden-metaphor): padding var(--spacing-md), border-radius 8px, background rgba(255,255,255,0.1), border: 2px solid rgba(255,255,255,0.3), text-align center
 
+### Idézet buborék (.quote-bubble)
+
+*(Új, 2026-07-05 – a #hero "Rólam" szekciójában használt)*
+
+- `<blockquote class="quote-bubble">` – szemantikus idézet elem, nem `<p>`
+- background: rgba(255,255,255,0.1), border: 2px solid rgba(255,255,255,0.3), border-radius: 16px *(kerekebb, mint a `.level`/`.pillar`/`.step` 8px-je)*
+- padding: var(--spacing-lg) var(--spacing-md), max-width: 700px, margin: 0 auto var(--spacing-lg)
+- font-style: italic, color: var(--color-white)
+- nincs jelvény/szám benne (szándékosan, eltérően a `.step-number`-től)
+
+### Bevezető bekezdés (.intro)
+
+- font-size var(--fs-body), color var(--color-text-light), max-width 800px
+- **margin: 0 auto var(--spacing-lg)** (2026-07-05: korábban hiányzott az auto vízszintes margó, emiatt a blokk balra tapadt a konténerben ahelyett, hogy középre igazodott volna a teljes szélességű elemekhez képest)
+- **text-align: justify** (2026-07-05-től – korábban nem volt igazítás megadva, alapértelmezett balra zárt/cakkos jobb szél volt)
+- kivétel: `#kinezio` szekcióban mobilon (≤768px) az `.intro` visszavált `text-align: left`-re (lásd a `#kinezio` mobil-override szabályát)
+
+### Footer (footer, .footer-content, .footer-col, .footer-social)
+
+*(Új, 2026-07-05)*
+
+- `footer`: background var(--color-primary-dark), color var(--color-white), text-align center, padding var(--spacing-lg), font-size var(--fs-small)
+- `.footer-content`: display flex, justify-content center, gap var(--spacing-xl), flex-wrap wrap – két oszlop (Email, Follow)
+- `.footer-col h4`: font-family var(--font-serif), font-weight 400, szín fehér
+- `.footer-col a`: rgba(255,255,255,0.85), hover: var(--color-accent)
+- `.footer-social a`: 36×36px kör (border-radius 50%), background var(--color-white), color var(--color-primary-dark) – inline SVG ikonok (Facebook, Instagram, YouTube), hover: background var(--color-accent)
+- `.footer-copyright`: rgba(255,255,255,0.7)
+- a social linkek jelenleg `href="#"` placeholder-ek, a valódi profil-linkek később kerülnek be
+
 ### Section Container (.section-container)
 
 - max-width: 1200px, margin: 0 auto
@@ -163,9 +192,12 @@ mobil (≤768px): mindegyik `grid-template-columns: 1fr`-re vált
 | #kinezio | var(--color-primary-dark) | white |
 | #recall | var(--color-bg) | var(--color-text) (örökölt) |
 | #garden-metaphor | sima CSS gradient (primary → primary-dark), nincs alatta kép-overlay | white |
-| #contact | var(--color-bg) | var(--color-text) (örökölt) |
+| #tanulmanyok | var(--color-bg) | var(--color-text) |
+| #contact | var(--color-bg) | var(--color-text) |
 
 *(A #hero és a #garden-metaphor gradiense két különböző szín-párost használ: hero = primary-light→primary-dark, garden-metaphor = primary→primary-dark – ne keverd össze a kettőt.)*
+
+*(2026-07-05: fontos hiba javítva – korábban #coaching, #recall, #contact "örökölt" színt használt a body-tól, mert a `color` property nem volt explicit beállítva rajtuk. Amikor az újonnan beszúrt `#tanulmanyok` szekció eltolta a `#contact`-ot páratlan pozícióba, az örökölt szín felülíródott a `section:nth-of-type(odd):nth-of-type(n+3)` szabály fehér `color`-jával → a #contact szövege fehér lett fehér/krém háttéren, láthatatlanná vált. Azóta mind a négy világos szekció (#coaching, #recall, #contact, #tanulmanyok) explicit `color: var(--color-text)`-et kap, függetlenül a szekció-sorrendtől.)*
 
 ---
 

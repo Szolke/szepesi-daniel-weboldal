@@ -30,12 +30,26 @@
 
 ---
 
+## Navigáció (#navbar)
+
+*(2026-07-05 óta összevont/bővült)*
+
+- Kezdőlap (#hero) → Módszerem (#coaching – korábban külön Coaching/Kineziológia/Recall Healing linkek voltak, most egybe vonva) → A kert (#garden-metaphor) → Önismeret és tanulmányok (#tanulmanyok – új, egyelőre üres stub szekció) → Kapcsolat (#contact)
+- A navbar `position: fixed`, mindig a képernyő tetején marad
+
+---
+
 ## Szekciók & Tartalom
 
 ### 1. Hero szekció (#hero)
-- Erős, figyelemfelkeltő bevezető – a kertész metaforára alapozva
+
+*(2026-07-05-tól: tartalma lecserélve "Rólam" bemutatkozásra – a kertész-metafora szöveg csak a #garden-metaphor szekcióban maradt meg)*
+
+- Cím: „Rólam"
+- Idézet buborékban (`.quote-bubble`): „Abban segítem a hozzám fordulókat, hogy mélyebben megismerjék és megértsék Önmagukat, és ezáltal egy szabadabb, önazonosabb életet tudjanak élni."
+- 3 bekezdésnyi személyes történet (önismereti út, módszerek, holisztikus szemlélet kialakulása)
 - Kettős CTA gomb: „Foglalj időpontot" + „Ismerj meg"
-- Háttér: gradient vagy hero.jpg
+- Háttér: hero.jpg + gradient overlay
 - Hangulat: megnyerő, inspiráló, profi
 
 ### 2. Life Coaching (#coaching)
@@ -69,10 +83,22 @@
 - Záró gondolat: Mi a lényeg?
 - Kép: garden-metaphor.jpg
 
-### 6. Kapcsolat (#contact)
+### 6. Önismeret és tanulmányok (#tanulmanyok)
+
+*(Új, 2026-07-05 – jelenleg üres stub szekció, csak `<h2>` címmel; a nav-linkje és a section id-je készen áll, a tényleges tartalom később kerül bele)*
+
+### 7. Kapcsolat (#contact)
 - Form: Név, Email, Üzenet (validációval)
 - Elérhetőségek: Email, Telefon, Helyszín (placeholder-ek)
 - CTA gomb: „Küldés"
+- Profilkép (.contact-info dobozban)
+
+### 8. Footer
+
+*(Új, 2026-07-05)*
+
+- Két oszlop: Email (mailto link) és Follow (Facebook/Instagram/YouTube ikonok, inline SVG – a linkek egyelőre placeholder `#`, később kerülnek be a valódi profilok)
+- Copyright sor
 
 ---
 
