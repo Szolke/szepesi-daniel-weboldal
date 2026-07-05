@@ -275,7 +275,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 .intro {
   font-size: var(--fs-body);
   color: var(--color-text-light);
-  margin-bottom: var(--spacing-lg);
+  margin: 0 auto var(--spacing-lg);
   max-width: 800px;
   text-align: justify;
 }
