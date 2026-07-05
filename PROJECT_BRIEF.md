@@ -10,7 +10,7 @@
 **Cél**: Bemutatkozó oldal három holisztikus módszerhez, összekötő kertész metaforával.
 **Szakember**: Szepesi Dániel (life coach, kinéziológus, Recall Healing gyakorló)
 **Cégnév**: nincs – csak a neve szerepel az oldalon
-**Portréfotó**: profile.jpg (/images mappában, fehér háttér, professzionális)
+**Portréfotó**: profile.jpg (/images mappában; a #contact szekció .contact-info dobozában jelenik meg, kör alakúra vágva)
 
 ---
 
@@ -110,10 +110,10 @@
 - Törzs: Lato, sans-serif – 1.1rem (18px)
 
 ### Reszponzivitás
-- Desktop: > 1200px
-- Tablet: 768px – 1200px
-- Mobile: < 768px
-- Extra small: < 480px
+A style.css-ben ténylegesen csak két `@media` töréspont létezik – nincs külön kódolt "tablet" szabálykészlet, a 768px és 1200px közti tartományt a grid-ek `auto-fit` viselkedése tölti ki képernyőszélesség szerint:
+- Alap (nincs media query): > 768px
+- `@media (max-width: 768px)`: tipó/spacing változók csökkennek, grid-ek 1 oszlopra váltanak, navbar tördel
+- `@media (max-width: 480px)`: h1 és --spacing-lg tovább csökken
 
 ---
 

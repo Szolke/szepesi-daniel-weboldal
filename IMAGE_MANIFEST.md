@@ -2,14 +2,14 @@
 
 ## Összefoglaló
 
-| Kép | Fájlnév | Méret | Alt szöveg | Szekció | Státusz |
+| Kép | Fájlnév | Méret | Alt szöveg (a tényleges index.html szerint) | Szekció | Státusz |
 |-----|---------|-------|-----------|---------|---------|
 | Hero | hero.jpg | 1920×1080 | Virágzó kert napfényben | #hero | ⏳ Generálni |
-| Life Coaching | coaching.jpg | 1200×800 | Meleg inspiráló jelenet ember és természettel | #coaching | ⏳ Generálni |
-| Kineziológia | kinezio.jpg | 1200×800 | Agyféltekék szimbolikája, egyensúly | #kinezio | ⏳ Generálni |
-| Recall Healing | recall.jpg | 1200×800 | Gyökerek, mélyebb rétegek, föld | #recall | ⏳ Generálni |
-| Kertész metafora | garden-metaphor.jpg | 1600×800 | Illusztratív kert három részre osztva | #garden-metaphor | ⏳ Generálni |
-| Profil | profile.jpg | 400×400 | Szepesi Dániel portréja | Hero mellett / Rólam | ✅ Rendelkezésre áll |
+| Life Coaching | coaching.jpg | 1200×800 | Life coaching ülés meleg, bizalmas légkörben | #coaching | ⏳ Generálni |
+| Kineziológia | kinezio.jpg | 1200×800 | Kineziológiai kezelés, izomtesztelés közben | #kinezio | ⏳ Generálni |
+| Recall Healing | recall.jpg | 1200×800 | Nyugodt konzultációs tér a Recall Healing üléshez | #recall | ⏳ Generálni |
+| Kertész metafora | garden-metaphor.jpg | 1600×800 | Gondozott, virágzó kert szimbolikus fényben | #garden-metaphor | ⏳ Generálni |
+| Profil | profile.jpg | 400×400 | Szepesi Dániel | #contact (a .contact-info dobozban) | ✅ Rendelkezésre áll |
 
 ---
 
@@ -69,6 +69,8 @@ Wide panoramic composition, 2:1 aspect ratio.
 
 ## HTML Képhelyek
 
+*(Az alábbi kód szó szerint az `index.html`-ből – nem terv, a jelenlegi élő markup.)*
+
 ### hero.jpg
 ```html
 <img src="images/hero.jpg" alt="Virágzó kert napfényben" class="hero-image">
@@ -76,63 +78,87 @@ Wide panoramic composition, 2:1 aspect ratio.
 
 ### coaching.jpg
 ```html
-<img src="images/coaching.jpg" alt="Meleg inspiráló jelenet ember és természettel" class="section-image">
+<img src="images/coaching.jpg" alt="Life coaching ülés meleg, bizalmas légkörben" class="section-image">
 ```
 
 ### kinezio.jpg
 ```html
-<img src="images/kinezio.jpg" alt="Agyféltekék szimbolikája, egyensúly" class="section-image">
+<img src="images/kinezio.jpg" alt="Kineziológiai kezelés, izomtesztelés közben" class="section-image">
 ```
 
 ### recall.jpg
 ```html
-<img src="images/recall.jpg" alt="Gyökerek, mélyebb rétegek, föld" class="section-image">
+<img src="images/recall.jpg" alt="Nyugodt konzultációs tér a Recall Healing üléshez" class="section-image">
 ```
 
 ### garden-metaphor.jpg
 ```html
-<img src="images/garden-metaphor.jpg" alt="Illusztratív kert három részre osztva" class="section-image">
+<img src="images/garden-metaphor.jpg" alt="Gondozott, virágzó kert szimbolikus fényben" class="section-image">
 ```
 
 ### profile.jpg
 ```html
-<img src="images/profile.jpg" alt="Szepesi Dániel portréja" class="profile-image">
+<img src="images/profile.jpg" alt="Szepesi Dániel" class="profile-image">
 ```
 
 ---
 
 ## CSS Osztályok
 
+*(Az alábbi kód pontosan a `css/style.css`-ben lévő, ténylegesen élő definíció – nem terv.)*
+
 ```css
+/* A .hero-image a #hero teljes hátterét tölti ki, a szöveg olvashatóságáért
+   a #hero::before egy 0.85 opacitású zöld gradienst rak rá overlay-ként. */
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
-  margin-top: var(--spacing-lg);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--color-primary-dark);
+  z-index: 0;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  opacity: 0.85;
+  z-index: 1;
 }
 
 .section-image {
-  max-width: 100%;
-  height: auto;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--color-border);
   border-radius: 8px;
   box-shadow: var(--shadow-light);
-  margin: var(--spacing-lg) 0;
+  margin: 0 auto var(--spacing-lg);
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
+  display: block;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .section-image { margin: var(--spacing-md) 0; }
-  .profile-image { width: 150px; height: 150px; }
+  border-radius: 50%;
+  border: 4px solid var(--color-white);
+  box-shadow: var(--shadow-light);
+  margin: 0 auto var(--spacing-md);
 }
 ```
+
+Nincs külön mobil (`@media max-width: 768px`) felülírás sem a `.section-image`-re, sem a `.profile-image`-re – a `.section-image` a `max-width:700px` és a `width:100%` kombinációja miatt magától zsugorodik, a `.profile-image` mérete (120×120px) minden képernyőméreten fix marad.
 
 ---
 

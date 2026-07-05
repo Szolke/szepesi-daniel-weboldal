@@ -29,12 +29,12 @@ kertész metaforán keresztül.
 ├── /css/style.css
 ├── /js/main.js
 ├── /images/
-│   ├── hero.jpg
-│   ├── coaching.jpg
-│   ├── kinezio.jpg
-│   ├── recall.jpg
-│   ├── garden-metaphor.jpg
-│   └── profile.jpg
+│   ├── profile.jpg          – ✅ megvan
+│   ├── hero.jpg              – ⏳ még nincs generálva
+│   ├── coaching.jpg          – ⏳ még nincs generálva
+│   ├── kinezio.jpg           – ⏳ még nincs generálva
+│   ├── recall.jpg            – ⏳ még nincs generálva
+│   └── garden-metaphor.jpg   – ⏳ még nincs generálva
 ├── content.md              – szöveges tartalom forrása
 ├── README.md               – ez a fájl
 ├── PROJECT_BRIEF.md        – teljes projekt specifikáció
@@ -42,6 +42,8 @@ kertész metaforán keresztül.
 ├── CHANGELOG.md            – verzió-napló
 └── IMAGE_MANIFEST.md       – képek leltára, AI promptok
 ```
+
+A repóban emellett megtalálható a projekt korábbi (jelszavas védelmes) verziójának archívuma is: `index.old.html`, `main.old.html`, `css/style.old.css`, `js/main.old.js` – ezek nem részei az élő oldalnak, csak referenciaként lettek megőrizve.
 
 ## Dokumentáció
 
@@ -58,6 +60,6 @@ kertész metaforán keresztül.
 - Szín: természetközeli – zöld, föld, krém, arany
 - Tipó: Playfair Display (cím) + Lato (törzs)
 - Hangulat: meleg, bizalomkeltő, professzionális de emberi
-- Reszponzív: mobile-first, 768px + 480px breakpoints
+- Reszponzív: desktop-first (a CSS a `max-width` media query mintát követi, nem `min-width`-et), 768px + 480px breakpoints
 
 *Utolsó frissítés: 2026-07-05*

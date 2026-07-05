@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.2] – 2026-07-05 – Dokumentáció szinkronizálás
+
+### Changed
+- IMAGE_MANIFEST.md: CSS Osztályok szakasz a tényleges style.css-hez igazítva
+- PROJECT_BRIEF.md: profile.jpg helye javítva (#contact szekció)
+- DESIGN_SYSTEM.md: összes érték a tényleges style.css-ből frissítve
+- README.md: fájlstruktúra ellenőrizve és szinkronizálva
+
+### Verified
+- Dokumentáció ↔ kód konzisztencia ellenőrizve
+- Minden CSS érték, class, breakpoint egyezik
+
+### Talált további eltérések (a fenti listán túl)
+- IMAGE_MANIFEST.md: mind az 5 generálandó kép alt szövege eltért az index.html tényleges alt attribútumaitól – kijavítva
+- DESIGN_SYSTEM.md: `.btn` base padding, `.btn-primary` hover, kártya (`.level`/`.pillar`/`.step`) hover/transition állítások pontatlanok voltak – a kódban ezek nem léteznek, javítva
+- PROJECT_BRIEF.md és DESIGN_SYSTEM.md: "Tablet 768–1200px" töréspont nem létezik a kódban (csak 768px és 480px `@media` szabály van) – pontosítva
+- README.md: "mobile-first" állítás javítva "desktop-first"-re (a kód `max-width` media query-ket használ)
+
 ## [1.0.1] – 2026-07-05 – Audit & Dokumentáció
 
 ### Added

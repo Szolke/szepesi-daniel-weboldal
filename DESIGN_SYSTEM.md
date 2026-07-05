@@ -51,18 +51,20 @@ A projekt vizuális és komponens-alapú szabályrendszere.
 
 ### Méret Skála
 
-| Elem | Desktop | Mobile (< 768px) | CSS var |
-|------|---------|-------------------|---------|
-| h1 | 3.5rem (56px) | 2.5rem (40px) | --fs-h1 |
-| h2 | 2.2rem (35px) | 1.8rem (29px) | --fs-h2 |
-| h3 | 1.5rem (24px) | 1.2rem (19px) | --fs-h3 |
-| Body | 1.1rem (18px) | 1rem (16px) | --fs-body |
-| Small | 0.95rem (15px) | 0.95rem | --fs-small |
+| Elem | Desktop | ≤768px | ≤480px | CSS var |
+|------|---------|--------|--------|---------|
+| h1 | 3.5rem (56px) | 2.5rem (40px) | 2rem (32px) | --fs-h1 |
+| h2 | 2.2rem (35px) | 1.8rem (29px) | – (marad 1.8rem) | --fs-h2 |
+| h3 | 1.5rem (24px) | 1.2rem (19px) | – (marad 1.2rem) | --fs-h3 |
+| Body | 1.1rem (18px) | 1rem (16px) | – (marad 1rem) | --fs-body |
+| Small | 0.95rem (15px) | 0.95rem | – | --fs-small |
+
+*(A 480px-es töréspont csak a `--fs-h1`-et csökkenti tovább; a többi méret a 768px-es értéken marad.)*
 
 ### Szabályok
-- h1-h3: font-family var(--font-serif), color var(--color-primary-dark), text-align center
-- p: line-height 1.6, margin-bottom var(--spacing-md)
-- a: color var(--color-primary), text-decoration none, transition 0.3s
+- h1, h2, h3: font-family var(--font-serif), color var(--color-primary-dark), text-align center, line-height 1.2 (ez a `body`-tól eltérő szabály, közvetlenül a h1/h2/h3 szelektoron)
+- body (és így minden öröklő elem, pl. p): line-height 1.6 – **nincs** külön `p { margin-bottom: ... }` szabály a kódban
+- a: color var(--color-primary), text-decoration none, transition var(--transition) (0.3s ease), hover: color var(--color-primary-dark)
 
 ---
 
@@ -92,46 +94,60 @@ A projekt vizuális és komponens-alapú szabályrendszere.
 ### Button
 
 **Base (.btn)**
-- padding: 0.75rem 1.5rem (12px 24px)
+- padding: var(--spacing-sm) var(--spacing-md) *(= 1rem 2rem / 16px 32px – nem 0.75rem 1.5rem)*
+- border: none
 - border-radius: 4px
-- font-family: var(--font-sans)
 - font-size: 1rem
 - cursor: pointer
-- transition: all 0.3s ease
+- transition: var(--transition) (all 0.3s ease)
 
 **Primary (.btn-primary)**
 - background: var(--color-accent)
 - color: var(--color-text)
-- hover: box-shadow increase, translateY(-2px)
+- hover: background sötétebb árnyalatra vált (`color-mix(in srgb, var(--color-accent) 85%, black)`), box-shadow: var(--shadow-md), transform: scale(1.05)
+- **kivétel**: a `#contact` form submit gombja (`.contact-form .btn-primary:hover`) más hovert kap – background `color-mix(in srgb, var(--color-primary) 90%, black)`, transform: translateY(-2px) (ez felülírja a fenti scale-t, csak ezen az egy gombon)
 
 **Secondary (.btn-secondary)**
 - background: transparent
-- border: 2px solid white
-- color: white
-- hover: bg white, color var(--color-primary-dark)
+- border: 2px solid var(--color-white)
+- color: var(--color-white)
+- hover: background var(--color-white), color var(--color-primary-dark)
 
-### Card (.card, .level, .pillar, .step)
+### Kártyák (.level, .pillar, .step)
 
-- padding: 2rem
-- border-radius: 8px
-- box-shadow: var(--shadow-light)
-- background: var(--color-white) VAGY rgba(255,255,255,0.1) sötét szekciókban
-- transition: all 0.3s ease
-- hover: shadow increase, translateY(-4px)
+*Nincs generikus `.card` osztály a kódban – mindhárom kártyatípus saját, egymástól kissé eltérő szabályokkal rendelkezik, és egyiknek sincs `transition`-je vagy hover-állapota.*
+
+- `.level` (#coaching): padding var(--spacing-md), border-radius 8px, box-shadow var(--shadow-light), background var(--color-white), text-align center
+- `.pillar` (#recall): ugyanaz mint `.level`, plusz `border-top: 4px solid var(--color-primary)`
+- `.step` (#garden-metaphor): padding var(--spacing-md), border-radius 8px, background rgba(255,255,255,0.1), border: 2px solid rgba(255,255,255,0.3), text-align center
 
 ### Section Container (.section-container)
 
-- max-width: 1200px
-- margin: 0 auto
-- padding: var(--spacing-xl) var(--spacing-lg) → desktop
-- padding: var(--spacing-lg) var(--spacing-md) → mobile
+- max-width: 1200px, margin: 0 auto
+- a tényleges felső/alsó és oldalsó padding a szülő `section` elemen van, nem a `.section-container`-en: `section { padding: var(--spacing-xl) var(--spacing-lg); }`
+- mobilon (≤768px) a `.section-container` kap egy extra, csak vízszintes paddingot: `padding: 0 var(--spacing-md)` – ez ráadódik a `section` (időközben kisebb `--spacing-lg` értékű) saját paddingjára, nem helyettesíti azt
 
 ### Grid
 
-- display: grid
-- grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
-- gap: var(--spacing-lg)
-- mobile (< 768px): grid-template-columns: 1fr
+Nincs egységes grid-osztály – komponensenként eltérő `minmax` érték:
+
+| Komponens | grid-template-columns | gap |
+|---|---|---|
+| `.three-levels` | repeat(auto-fit, minmax(300px, 1fr)) | var(--spacing-lg) |
+| `.benefits` | repeat(auto-fit, minmax(250px, 1fr)) | var(--spacing-md) |
+| `.pillars` | repeat(auto-fit, minmax(250px, 1fr)) | var(--spacing-lg) |
+| `.garden-steps` | repeat(auto-fit, minmax(280px, 1fr)) | var(--spacing-lg) |
+
+mobil (≤768px): mindegyik `grid-template-columns: 1fr`-re vált
+
+### Navbar (#navbar)
+
+- position: sticky, top: 0, z-index: 100
+- magasság: 60px (fix – erre épít a `main.js` smooth scroll -60px eltolása)
+- display: flex, align-items center, justify-content center, gap var(--spacing-lg)
+- background: var(--color-white), box-shadow: var(--shadow-light)
+- linkek: color var(--color-primary-dark), font-weight 700, font-size var(--fs-small); hover: color var(--color-primary)
+- mobilon (≤768px): magasság auto-ra vált, flex-wrap: wrap, gap var(--spacing-sm), padding var(--spacing-sm) var(--spacing-md) – tehát a 60px csak desktopon garantált
 
 ---
 
@@ -139,33 +155,37 @@ A projekt vizuális és komponens-alapú szabályrendszere.
 
 | Szekció | Háttér | Szöveg szín |
 |---------|--------|-------------|
-| #hero | gradient (primary-light → primary-dark) | white |
-| #coaching | var(--color-bg) | var(--color-text) |
+| #hero | `.hero-image` (teljes háttérkép, object-fit: cover) + `#hero::before` 0.85 opacitású gradient overlay (primary-light → primary-dark) | white |
+| #coaching | var(--color-bg) | var(--color-text) (örökölt) |
 | #kinezio | var(--color-primary-dark) | white |
-| #recall | var(--color-bg) | var(--color-text) |
-| #garden-metaphor | gradient (primary → primary-dark) | white |
-| #contact | var(--color-bg) | var(--color-text) |
+| #recall | var(--color-bg) | var(--color-text) (örökölt) |
+| #garden-metaphor | sima CSS gradient (primary → primary-dark), nincs alatta kép-overlay | white |
+| #contact | var(--color-bg) | var(--color-text) (örökölt) |
+
+*(A #hero és a #garden-metaphor gradiense két különböző szín-párost használ: hero = primary-light→primary-dark, garden-metaphor = primary→primary-dark – ne keverd össze a kettőt.)*
 
 ---
 
 ## Animációk & Transitions
 
-- **Global**: transition all 0.3s ease
-- **Smooth scroll**: jQuery 800ms
-- **Button click**: scale(0.95), 100ms, visszaáll
+- **--transition var (all 0.3s ease)**: a, button, .btn, .form-group input/textarea szelektorokon van kiosztva – **nem** globális minden elemre (a `.level`/`.pillar`/`.step` kártyáknak és a `.hero-image`/`.section-image` képeknek nincs transition tulajdonságuk)
+- **Smooth scroll**: jQuery, 800ms, `$('html, body').animate({scrollTop: ...}, 800)`
+- **Button click (CTA-k, main.js)**: transform scale(0.95), 100ms delay, majd visszaáll üres transformra
+- **Button hover (.btn-primary, CSS)**: sötétebb háttér + box-shadow var(--shadow-md) + transform scale(1.05); a #contact submit gombján kivételesen translateY(-2px)
 - **Form focus**: outline none, border-color var(--color-primary), box-shadow 0 0 0 3px rgba(74,124,95,0.1)
-- **Card hover**: shadow increase, translateY(-4px)
+- **Kártya hover**: **nem létezik** – sem shadow-increase, sem translateY nincs a `.level`/`.pillar`/`.step` osztályokon
 
 ---
 
 ## Breakpoints
 
-| Név | Szélesség | Grid | Spacing |
-|-----|-----------|------|---------|
-| Desktop | > 1200px | multi-column | full |
-| Tablet | 768–1200px | 2-3 column | csökkentett |
-| Mobile | < 768px | 1 column | minimális |
-| XS | < 480px | 1 column | extra minimális |
+A kódban ténylegesen csak két `@media` szabály van (768px és 480px) – nincs külön "tablet" logika, a közte lévő tartományt a grid-ek `auto-fit` viselkedése kezeli automatikusan, konténerszélesség alapján.
+
+| Töréspont | Mit vált |
+|-----------|----------|
+| Alapértelmezett (>768px) | teljes méretű tipó/spacing, többoszlopos grid-ek (auto-fit alapján) |
+| `@media (max-width: 768px)` | --fs-h1/h2/h3/body és --spacing-lg/md csökken, `.three-levels`/`.garden-steps`/`.pillars` 1 oszlopra vált, `#navbar` tördel, input/textarea font-size 16px (zoom-fix) |
+| `@media (max-width: 480px)` | --fs-h1 tovább csökken 2rem-re, --spacing-lg 1.5rem-re |
 
 ---
 
