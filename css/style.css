@@ -277,6 +277,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
   color: var(--color-text-light);
   margin-bottom: var(--spacing-lg);
   max-width: 800px;
+  text-align: justify;
 }
 
 .subheading-left {
