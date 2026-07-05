@@ -92,8 +92,10 @@ button:hover {
 
 /* Navigáció */
 #navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -140,9 +142,10 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 /* Hero */
 #hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   max-width: none;
   margin: 0;
+  margin-top: 60px; /* kompenzálja a fixed #navbar magasságát, ami kikerült a flow-ból */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -573,6 +576,7 @@ footer {
 
   #hero {
     min-height: auto;
+    margin-top: 130px; /* a #navbar tördelve, több sorban jelenik meg, magasabb helyfoglalást igényel */
     padding: var(--spacing-lg) var(--spacing-md);
   }
 
@@ -615,6 +619,10 @@ footer {
   :root {
     --fs-h1: 2rem;
     --spacing-lg: 1.5rem;
+  }
+
+  #hero {
+    margin-top: 150px; /* keskenyebb kijelzőn a #navbar még több sorra törik */
   }
 
   .hero-content p {

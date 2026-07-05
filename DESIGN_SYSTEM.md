@@ -144,12 +144,13 @@ mobil (≤768px): mindegyik `grid-template-columns: 1fr`-re vált
 
 ### Navbar (#navbar)
 
-- position: sticky, top: 0, z-index: 100
+- position: **fixed** (2026-07-05 óta – korábban sticky volt), top: 0, left: 0, width: 100%, z-index: 100
 - magasság: 60px (fix – erre épít a `main.js` smooth scroll -60px eltolása)
 - display: flex, align-items center, justify-content center, gap var(--spacing-lg)
 - background: var(--color-white), box-shadow: var(--shadow-light)
 - linkek: color var(--color-primary-dark), font-weight 700, font-size var(--fs-small); hover: color var(--color-primary)
 - mobilon (≤768px): magasság auto-ra vált, flex-wrap: wrap, gap var(--spacing-sm), padding var(--spacing-sm) var(--spacing-md) – tehát a 60px csak desktopon garantált
+- mivel a `#navbar` fixed (kikerül a normál flow-ból), a `#hero`-nak van egy kompenzáló `margin-top`-ja: 60px desktopon (és `min-height: calc(100vh - 60px)`), 130px ≤768px-nél, 150px ≤480px-nél (a tördelt, több soros navbar miatt egyre nagyobb helyet kell hagyni fölötte)
 
 ---
 
