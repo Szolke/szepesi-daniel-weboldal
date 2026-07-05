@@ -4,14 +4,16 @@
 
 | Kép | Fájlnév | Méret | Alt szöveg (a tényleges index.html szerint) | Szekció | Státusz |
 |-----|---------|-------|-----------|---------|---------|
-| Hero | hero.jpg | 1920×1080 | Virágzó kert napfényben | #hero | ⏳ Generálni ⚠️ |
-| Life Coaching | coaching.jpg | 1200×800 | Life coaching ülés meleg, bizalmas légkörben | #coaching | ⏳ Generálni |
-| Kineziológia | kinezio.jpg | 1200×800 | Kineziológiai kezelés, izomtesztelés közben | #kinezio | ⏳ Generálni |
-| Recall Healing | recall.jpg | 1200×800 | Nyugodt konzultációs tér a Recall Healing üléshez | #recall | ⏳ Generálni |
-| Kertész metafora | garden-metaphor.jpg | 1600×800 | Gondozott, virágzó kert szimbolikus fényben | #garden-metaphor | ⏳ Generálni |
-| Profil | profile.jpg | 400×400 | Szepesi Dániel | #contact (a .contact-info dobozban) | ✅ Rendelkezésre áll |
+| Hero | hero.jpg | 1920×1080 | Virágzó kert napfényben | #hero | ✅ Feltöltve ⚠️ |
+| Life Coaching | coaching.jpg | 1200×800 | Life coaching ülés meleg, bizalmas légkörben | #coaching | ✅ Feltöltve |
+| Kineziológia | kinezio.jpg | 1200×800 | Kineziológiai kezelés, izomtesztelés közben | #kinezio | ✅ Feltöltve |
+| Recall Healing | recall.jpg | 1200×800 | Nyugodt konzultációs tér a Recall Healing üléshez | #recall | ✅ Feltöltve |
+| Kertész metafora | garden-metaphor.jpg | 1600×800 | Gondozott, virágzó kert szimbolikus fényben | #garden-metaphor | ✅ Feltöltve |
+| Profil | profile.jpg | 400×400 | Szepesi Dániel | #contact (a .contact-info dobozban) | ✅ Feltöltve |
 
-⚠️ **2026-07-05: tartalmi ellentmondás a hero.jpg-nél** – a `#hero` szekció szövege azóta "Rólam" személyes bemutatkozásra cserélődött (lásd PROJECT_BRIEF.md), de a hero.jpg AI-promptja és alt szövege még mindig a kertész-metafora virágzó kert témáját írja le. Mielőtt legenerálnátok ezt a képet, érdemes eldönteni: marad a kert-témájú kép (csak dekoratív háttér, nem kell illeszkednie szó szerint a szöveghez), vagy inkább egy személyesebb/portré jellegű kép illene a "Rólam" tartalomhoz.
+⚠️ **2026-07-05: tartalmi ellentmondás a hero.jpg-nél továbbra is fennáll** – a feltöltött hero.jpg egy festői, virágzó kert-illusztráció (a kertész-metafora témájában), miközben a `#hero` szekció szövege azóta "Rólam" személyes bemutatkozásra cserélődött (lásd PROJECT_BRIEF.md). A kép technikailag jól működik dekoratív háttérként (a gradient overlay miatt a szöveg olvasható rajta), de tartalmilag nem a "Rólam" mondanivalóhoz illik – érdemes eldönteni, hogy marad-e dekoratív elemként, vagy cserélni kell egy személyesebb képre.
+
+📦 **Fájlméretek**: a most feltöltött 5 kép egyenként ~2–2.8 MB (összesen kb. 11.6 MB) – ez elég nagy egy weboldalhoz. Optimalizálás (tömörítés, WebP konverzió) még nem történt meg, lásd a "Következő Lépések" 3. pontját.
 
 ---
 
@@ -166,15 +168,16 @@ Nincs külön mobil (`@media max-width: 768px`) felülírás sem a `.section-ima
 
 ## Státusz
 
-- ⏳ Generálni: 5 kép (hero, coaching, kinezio, recall, garden-metaphor)
-- ✅ Kész: 1 kép (profile.jpg)
+- ✅ Feltöltve: mind a 6 kép (hero, coaching, kinezio, recall, garden-metaphor, profile)
+- ⚠️ Nyitott kérdés: hero.jpg tartalmi illeszkedése a "Rólam" szöveghez (lásd fentebb)
 
 ## Következő Lépések
 
-1. [ ] AI képek generálása (fenti promptokkal)
-2. [ ] /images mappába mentés
-3. [ ] Ellenőrzés: img tagek src helyes-e
-4. [ ] Responsive tesztelés képekkel
-5. [ ] Optimalizáció (WebP, lazy loading – később)
+1. [x] AI képek generálása (fenti promptokkal)
+2. [x] /images mappába mentés
+3. [ ] Ellenőrzés: img tagek src helyes-e (a fájlnevek egyeznek, vizuálisan a hero.jpg-t ellenőriztem – kert-illusztráció, jól betölt)
+4. [ ] Responsive tesztelés képekkel (mobil nézetben még nem ellenőriztük élesben)
+5. [ ] Optimalizáció (WebP, tömörítés, lazy loading) – a jelenlegi fájlok ~2–2.8 MB-osak, ez még nincs optimalizálva
+6. [ ] Döntés a hero.jpg témájáról (marad kert-illusztráció, vagy személyesebb kép kerüljön a helyére)
 
 *Utolsó frissítés: 2026-07-05*
