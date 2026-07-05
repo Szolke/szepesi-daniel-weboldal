@@ -1,28 +1,63 @@
-# Szepesi Dániel – weboldal
+# Szepesi Dániel – Holisztikus Fejlesztés Weboldala
 
-Egyoldalas bemutatkozó weboldal Szepesi Dániel holisztikus fejlesztő (life coaching, kineziológia, Recall Healing) szolgáltatásainak bemutatására.
+Egy holisztikus fejlesztéssel, önismerettel és gyógyulással foglalkozó szakember bemutatkozó oldala.
+Az oldal három fő módszert (Life Coaching, Kineziológia, Recall Healing) mutat be egy összekötő
+kertész metaforán keresztül.
 
-## Inspiráció
+## Deployment
 
-- https://gonczlikandi.hu
-- https://creado.hu/hu/oldal/goda-gyula
+- **Live**: Cloudflare Pages (auto-deploy on git push)
+- **Repository**: GitHub (szepesi-daniel-weboldal)
 
-## Tech stack
+## Tech Stack
 
-- HTML5
-- CSS3
-- Vanilla JS
-- jQuery
+- HTML5, CSS3, jQuery
+- Cloudflare Pages hosting
+
+## Gyors Start
+
+1. `git clone https://github.com/[user]/szepesi-daniel-weboldal.git`
+2. Szerkesztés: `index.html`, `css/style.css`, `js/main.js`
+3. `git add . && git commit -m "description" && git push`
+4. Cloudflare Pages automatikusan deploy-ol
 
 ## Fájlstruktúra
 
 ```
-.
-├── index.html          # Belépési pont
-├── content.md          # Szöveges tartalom forrása
-├── css/
-│   └── style.css       # Stílusok
-├── js/
-│   └── main.js         # Kliensoldali logika
-└── images/              # Képek
+/szepesi-daniel-weboldal
+├── index.html
+├── /css/style.css
+├── /js/main.js
+├── /images/
+│   ├── hero.jpg
+│   ├── coaching.jpg
+│   ├── kinezio.jpg
+│   ├── recall.jpg
+│   ├── garden-metaphor.jpg
+│   └── profile.jpg
+├── content.md              – szöveges tartalom forrása
+├── README.md               – ez a fájl
+├── PROJECT_BRIEF.md        – teljes projekt specifikáció
+├── DESIGN_SYSTEM.md        – design tokenek, komponensek
+├── CHANGELOG.md            – verzió-napló
+└── IMAGE_MANIFEST.md       – képek leltára, AI promptok
 ```
+
+## Dokumentáció
+
+| Fájl | Tartalom |
+|------|----------|
+| PROJECT_BRIEF.md | Teljes specifikáció – az "igazság forrása" |
+| DESIGN_SYSTEM.md | Szín-paletta, tipográfia, komponensek, breakpoints |
+| CHANGELOG.md | Verzió-napló, minden módosítás dokumentálva |
+| IMAGE_MANIFEST.md | Képek leltára, státusza, AI generálás promptok |
+| content.md | Az oldal szöveges tartalma (szekciónként) |
+
+## Design Elvek
+
+- Szín: természetközeli – zöld, föld, krém, arany
+- Tipó: Playfair Display (cím) + Lato (törzs)
+- Hangulat: meleg, bizalomkeltő, professzionális de emberi
+- Reszponzív: mobile-first, 768px + 480px breakpoints
+
+*Utolsó frissítés: 2026-07-05*
