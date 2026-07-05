@@ -192,3 +192,76 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
     align-items: stretch;
   }
 }
+
+/* Life Coaching */
+#coaching {
+  background: var(--color-bg);
+  padding: var(--spacing-xl);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-container h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary-dark);
+}
+
+.intro {
+  font-size: var(--fs-body);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+}
+
+.three-levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.level {
+  background: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+}
+
+.level h3 {
+  color: var(--color-primary);
+}
+
+.benefits {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.benefits li {
+  padding: var(--spacing-sm);
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--spacing-md);
+}
+
+.closing {
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .three-levels {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
