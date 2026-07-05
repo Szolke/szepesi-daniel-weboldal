@@ -257,6 +257,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 /* Life Coaching */
 #coaching {
   background: var(--color-bg);
+  color: var(--color-text);
   padding: var(--spacing-xl);
 }
 
@@ -385,6 +386,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 /* Recall Healing */
 #recall {
   background: var(--color-bg);
+  color: var(--color-text);
   padding: var(--spacing-xl);
 }
 
@@ -497,6 +499,13 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 /* Contact */
 #contact {
   background: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--spacing-xl);
+}
+
+#tanulmanyok {
+  background: var(--color-bg);
+  color: var(--color-text);
   padding: var(--spacing-xl);
 }
 
