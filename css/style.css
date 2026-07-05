@@ -340,3 +340,78 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
     grid-template-columns: 1fr;
   }
 }
+
+/* Garden Metaphor */
+#garden-metaphor {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  padding: var(--spacing-xl);
+}
+
+#garden-metaphor h2 {
+  color: var(--color-white);
+  text-align: center;
+}
+
+#garden-metaphor .intro {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.garden-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.step h3 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.step p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.summary {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .garden-steps {
+    grid-template-columns: 1fr;
+  }
+}
