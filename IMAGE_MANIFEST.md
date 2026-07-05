@@ -9,7 +9,7 @@
 | Kineziológia | kinezio.jpg | 1200×800 | Kineziológiai kezelés, izomtesztelés közben | #kinezio | ✅ Feltöltve |
 | Recall Healing | recall.jpg | 1200×800 | Nyugodt konzultációs tér a Recall Healing üléshez | #recall | ✅ Feltöltve |
 | Kertész metafora | garden-metaphor.jpg | 1600×800 | Gondozott, virágzó kert szimbolikus fényben | #garden-metaphor | ✅ Feltöltve |
-| Profil | profile.jpg | 400×400 | Szepesi Dániel | #contact (a .contact-info dobozban) | ✅ Feltöltve |
+| Profil | profile_03.jpg | 400×400 | Szepesi Dániel | #contact (a .contact-info dobozban) | ✅ Feltöltve |
 
 ⚠️ **2026-07-05: tartalmi ellentmondás a hero.jpg-nél továbbra is fennáll** – a feltöltött hero.jpg egy festői, virágzó kert-illusztráció (a kertész-metafora témájában), miközben a `#hero` szekció szövege azóta "Rólam" személyes bemutatkozásra cserélődött (lásd PROJECT_BRIEF.md). A kép technikailag jól működik dekoratív háttérként (a gradient overlay miatt a szöveg olvasható rajta), de tartalmilag nem a "Rólam" mondanivalóhoz illik – érdemes eldönteni, hogy marad-e dekoratív elemként, vagy cserélni kell egy személyesebb képre.
 
@@ -100,9 +100,12 @@ Wide panoramic composition, 2:1 aspect ratio.
 <img src="images/garden-metaphor.jpg" alt="Gondozott, virágzó kert szimbolikus fényben" class="section-image">
 ```
 
-### profile.jpg
+### profile_03.jpg
+
+*(2026-07-05: az eredeti profile.jpg lecserélve profile_03.jpg-re – a régi fájl megmaradt a repóban, de már nincs használatban)*
+
 ```html
-<img src="images/profile.jpg" alt="Szepesi Dániel" class="profile-image">
+<img src="images/profile_03.jpg" alt="Szepesi Dániel" class="profile-image">
 ```
 
 ---

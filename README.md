@@ -30,13 +30,14 @@ szekcióval és egy kapcsolatfelvételi résszel.
 ├── /css/style.css
 ├── /js/main.js
 ├── /images/
-│   ├── profile.jpg          – ✅ használatban (#contact)
+│   ├── profile_03.jpg        – ✅ használatban (#contact)
 │   ├── hero.jpg              – ✅ használatban (#hero)
 │   ├── coaching.jpg          – ✅ használatban (#coaching)
 │   ├── kinezio.jpg           – ✅ használatban (#kinezio)
 │   ├── recall.jpg            – ✅ használatban (#recall)
 │   ├── garden-metaphor.jpg   – ✅ használatban (#garden-metaphor)
-│   └── profile_01/02/03.jpg/png – alternatív profilkép-jelöltek, jelenleg nincsenek bekötve az index.html-be
+│   ├── profile.jpg           – nincs használatban (a korábbi profilkép, profile_03.jpg váltotta)
+│   └── profile_01/02.jpg     – alternatív profilkép-jelöltek, jelenleg nincsenek bekötve az index.html-be
 ├── content.md              – szöveges tartalom forrása
 ├── README.md               – ez a fájl
 ├── PROJECT_BRIEF.md        – teljes projekt specifikáció
