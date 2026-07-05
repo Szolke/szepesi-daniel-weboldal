@@ -10,33 +10,35 @@ A projekt vizuális és komponens-alapú szabályrendszere.
 
 ```css
 :root {
-  --color-primary-dark: #2d5a3d;
-  --color-primary: #4a7c5f;
-  --color-primary-light: #7db896;
-  --color-secondary: #8b7355;
-  --color-accent: #d4a574;
-  --color-text: #2c2c2c;
-  --color-text-light: #666666;
-  --color-bg: #faf8f5;
-  --color-white: #ffffff;
-  --color-border: #e0dbd3;
+  --color-primary-dark: #5c4033;
+  --color-primary: #8b6f4e;
+  --color-primary-light: #c4a882;
+  --color-secondary: #a67c52;
+  --color-accent: #d4a55a;
+  --color-text: #3d3028;
+  --color-text-light: #7a6b5d;
+  --color-bg: #f5f0e8;
+  --color-white: #fffcf7;
+  --color-border: #ddd5c9;
 }
 ```
+
+*(2026-07-05: zöld alapú paletta → meleg bézs/földszín paletta, inspiráció: marosvolgyiandrea.hu)*
 
 ### Használat
 
 | Szín | CSS Var | Mire |
 |------|---------|------|
-| Sötét zöld | --color-primary-dark | h1-h3, szekció BG (kinezio, garden) |
-| Zöld | --color-primary | Links, primary button, kiemelés |
-| Világos zöld | --color-primary-light | Hero gradient |
-| Föld-barna | --color-secondary | Secondary accent |
-| Arany | --color-accent | CTA gombok, step-number, border-left |
+| Sötét meleg barna | --color-primary-dark | h1-h3, szekció BG (kinezio, garden-metaphor) |
+| Meleg közép barna | --color-primary | Links, primary button hover, kiemelés |
+| Világos homokszín/camel | --color-primary-light | Hero gradient |
+| Meleg arany-barna | --color-secondary | Secondary accent |
+| Meleg arany | --color-accent | CTA gombok, step-number, border-left |
 | Szöveg | --color-text | Szövegtörzs |
 | Szöveg-light | --color-text-light | Másodlagos szöveg, intro, closing |
-| BG | --color-bg | Oldal háttér, világos szekciók |
-| White | --color-white | Kártyák háttere |
-| Border | --color-border | Form szegélyek |
+| BG | --color-bg | Oldal háttér, világos szekciók (meleg krém/bézs) |
+| White | --color-white | Kártyák háttere (meleg fehér) |
+| Border | --color-border | Form szegélyek (meleg bézs) |
 
 ---
 
@@ -172,7 +174,7 @@ mobil (≤768px): mindegyik `grid-template-columns: 1fr`-re vált
 - **Smooth scroll**: jQuery, 800ms, `$('html, body').animate({scrollTop: ...}, 800)`
 - **Button click (CTA-k, main.js)**: transform scale(0.95), 100ms delay, majd visszaáll üres transformra
 - **Button hover (.btn-primary, CSS)**: sötétebb háttér + box-shadow var(--shadow-md) + transform scale(1.05); a #contact submit gombján kivételesen translateY(-2px)
-- **Form focus**: outline none, border-color var(--color-primary), box-shadow 0 0 0 3px rgba(74,124,95,0.1)
+- **Form focus**: outline none, border-color var(--color-primary), box-shadow 0 0 0 3px rgba(139,111,78,0.15)
 - **Kártya hover**: **nem létezik** – sem shadow-increase, sem translateY nincs a `.level`/`.pillar`/`.step` osztályokon
 
 ---

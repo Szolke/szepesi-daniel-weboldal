@@ -89,18 +89,21 @@
 ## Design Specifikáció
 
 ### Szín-paletta
+
+*(2026-07-05 óta: meleg bézs/földszín paletta, inspiráció: marosvolgyiandrea.hu – korábban zöld alapú volt)*
+
 | Elem | Hex | CSS var |
 |------|-----|---------|
-| Sötét zöld | #2d5a3d | --color-primary-dark |
-| Zöld | #4a7c5f | --color-primary |
-| Világos zöld | #7db896 | --color-primary-light |
-| Föld-barna | #8b7355 | --color-secondary |
-| Arany | #d4a574 | --color-accent |
-| Szöveg | #2c2c2c | --color-text |
-| Szöveg-light | #666666 | --color-text-light |
-| BG | #faf8f5 | --color-bg |
-| White | #ffffff | --color-white |
-| Border | #e0dbd3 | --color-border |
+| Sötét meleg barna | #5c4033 | --color-primary-dark |
+| Meleg közép barna | #8b6f4e | --color-primary |
+| Világos homokszín/camel | #c4a882 | --color-primary-light |
+| Meleg arany-barna | #a67c52 | --color-secondary |
+| Meleg arany | #d4a55a | --color-accent |
+| Szöveg | #3d3028 | --color-text |
+| Szöveg-light | #7a6b5d | --color-text-light |
+| BG | #f5f0e8 | --color-bg |
+| White | #fffcf7 | --color-white |
+| Border | #ddd5c9 | --color-border |
 
 ### Tipográfia
 - Cím (h1-h3): Playfair Display, serif

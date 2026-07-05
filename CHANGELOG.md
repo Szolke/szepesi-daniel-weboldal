@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0] – 2026-07-05 – Színvilág átállítás
+
+### Changed
+- Teljes szín-paletta: zöld alapú → meleg bézs/földszín (barna, arany, krém)
+- Inspiráció: marosvolgyiandrea.hu stílusvilága
+- Hero gradient: zöldes → meleg homok-barna
+- Sötét szekciók: sötétzöld → sötét meleg barna
+- CTA gombok: arany tónus finomítva
+- Összes rgba() érték frissítve az új palettához
+- DESIGN_SYSTEM.md, PROJECT_BRIEF.md, IMAGE_MANIFEST.md frissítve
+
+### Verified
+- Nincs több régi zöld hex (#2d5a3d, #4a7c5f, #7db896) a style.css-ben
+- Az egyetlen zöldhöz kötött rgba() (form focus box-shadow) frissítve az új --color-primary-hoz
+- Minden szín CSS variable-ből jön, nincs hardcoded hex sem a style.css-ben, sem az index.html-ben
+- Layout, tipográfia, spacing, struktúra változatlan – csak színek módosultak
+
 ## [1.0.2] – 2026-07-05 – Dokumentáció szinkronizálás
 
 ### Changed

@@ -18,7 +18,7 @@
 ### hero.jpg
 ```
 A blooming garden in warm sunlight, peaceful yet vibrant.
-Lush greens, earth tones, cream, and golden accents.
+Warm earth tones, beige, golden, and brown accents, soft cream light.
 Painterly, illustrated style — not photorealistic.
 Metaphor for growth, healing, natural abundance.
 Wide composition, 16:9 aspect ratio.
@@ -29,7 +29,7 @@ Wide composition, 16:9 aspect ratio.
 Warm, inspiring scene of human connection and personal growth.
 Person in peaceful natural environment — park or garden.
 Soft natural lighting, serene, inviting atmosphere.
-Earth tones, soft greens, openness and trust.
+Warm earth tones, beige, golden, and brown, openness and trust.
 Illustration or digital art style.
 3:2 aspect ratio.
 ```
@@ -39,7 +39,7 @@ Illustration or digital art style.
 Visual metaphor for brain hemispheres and balance.
 Symmetrical composition with flowing, harmonious lines.
 Integration and wholeness — left and right halves merging.
-Soft greens and golden accents, peaceful balance.
+Warm earth tones, beige and golden accents, peaceful balance.
 Symbolic and healing, not medical or clinical.
 Illustration style. 3:2 aspect ratio.
 ```
@@ -48,7 +48,7 @@ Illustration style. 3:2 aspect ratio.
 ```
 Roots, deep earth layers, soil cross-section.
 Natural, organic textures — layers beneath the surface.
-Earth tones: browns, deep greens, golden highlights.
+Warm earth tones: browns, beige, golden highlights.
 Metaphor for healing from deep roots.
 Peaceful and grounding feeling.
 Botanical illustration quality. 3:2 aspect ratio.
@@ -61,7 +61,7 @@ LEFT: Soil analysis — earth layers, microscopic soil view
 MIDDLE: Weeding and cultivation — plants being tended, cleared space
 RIGHT: Landscaping — blooming garden, flowers, abundance
 One cohesive scene showing transformation.
-Greens, earth browns, golden accents. Botanical style.
+Warm earth tones, beige, golden, and brown accents. Botanical style.
 Wide panoramic composition, 2:1 aspect ratio.
 ```
 

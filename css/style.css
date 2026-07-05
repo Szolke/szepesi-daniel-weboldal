@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-  /* Szín-paletta */
-  --color-primary-dark: #2d5a3d;
-  --color-primary: #4a7c5f;
-  --color-primary-light: #7db896;
-  --color-secondary: #8b7355;
-  --color-accent: #d4a574;
-  --color-text: #2c2c2c;
-  --color-text-light: #666666;
-  --color-bg: #faf8f5;
-  --color-white: #ffffff;
-  --color-border: #e0dbd3;
+  /* Szín-paletta – meleg földtónusok */
+  --color-primary-dark: #5c4033;
+  --color-primary: #8b6f4e;
+  --color-primary-light: #c4a882;
+  --color-secondary: #a67c52;
+  --color-accent: #d4a55a;
+  --color-text: #3d3028;
+  --color-text-light: #7a6b5d;
+  --color-bg: #f5f0e8;
+  --color-white: #fffcf7;
+  --color-border: #ddd5c9;
 
   /* Tipográfia */
   --font-serif: 'Playfair Display', serif;
@@ -520,7 +520,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(74, 124, 95, 0.1);
+  box-shadow: 0 0 0 3px rgba(139, 111, 78, 0.15);
 }
 
 .contact-form .btn-primary:hover {

@@ -57,7 +57,7 @@ A repóban emellett megtalálható a projekt korábbi (jelszavas védelmes) verz
 
 ## Design Elvek
 
-- Szín: természetközeli – zöld, föld, krém, arany
+- Szín: természetközeli, meleg tónusok – bézs, barna, krém, arany
 - Tipó: Playfair Display (cím) + Lato (törzs)
 - Hangulat: meleg, bizalomkeltő, professzionális de emberi
 - Reszponzív: desktop-first (a CSS a `max-width` media query mintát követi, nem `min-width`-et), 768px + 480px breakpoints
