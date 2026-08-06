@@ -13,14 +13,14 @@
     <nav id="navbar">
       <a href="#hero">Kezdőlap</a>
       <a href="#coaching">Módszerem</a>
+      <a href="#kinezio">Kineziológia</a>
+      <a href="#recall">Recall Healing</a>
       <a href="#garden-metaphor">A kert</a>
-      <a href="#tanulmanyok">Önismeret és tanulmányok</a>
       <a href="#contact">Kapcsolat</a>
     </nav>
   </header>
 
   <section id="hero">
-    <img src="images/hero.jpg" alt="Virágzó kert napfényben" class="hero-image">
     <div class="hero-container">
       <div class="hero-content">
         <h1>Rólam</h1>
@@ -40,8 +40,6 @@
     <div class="section-container">
       <h2>Life Coaching</h2>
       <p class="intro">A life coaching egy mély, személyre szabott önismereti és jövőorientált fejlesztő folyamat, ahol a kliens (coachee) teljes, osztatlan figyelmet kap. Ez egy egyenrangú partnerségen alapuló közös felfedezés: a kliens hozza a kérdést vagy elakadást, a coach pedig segít felszínre hozni a válaszokat és a belső potenciált. A folyamat nem kész válaszokat vagy tanácsokat ad, hanem cselekvésorientált megközelítéssel segít kilépni a megszokott gondolkodási sémákból, hogy új utakat és megoldásokat találj.</p>
-
-      <img src="images/coaching.jpg" alt="Life coaching ülés meleg, bizalmas légkörben" class="section-image">
 
       <div class="three-levels">
         <article class="level">
@@ -74,8 +72,6 @@
       <h2>Kineziológia – One Brain módszer</h2>
       <p class="intro">A kineziológia One Brain (Egy agy) módszere egy olyan holisztikus, személyiség- és képességfejlesztő stresszoldó rendszer, amely a bal és jobb agyfélteke működésének összehangolására, valamint a múltbeli érzelmi traumák feloldására fókuszál. A módszert a Three in One Concepts alapítói (Gordon Stokes, Daniel Whiteside és Candace Callaway) fejlesztették ki az 1980-as évek elején.</p>
 
-      <img src="images/kinezio.jpg" alt="Kineziológiai kezelés, izomtesztelés közben" class="section-image">
-
       <h3>A módszer alapelve</h3>
       <p>A koncepció szerint stressz vagy trauma hatására a két agyfélteke közötti kommunikáció blokkolódik. A logikus, elemző bal agyfélteke és a kreatív, érzelmi jobb agyfélteke integrációja megszűnik, így az egyén beszűkült döntési helyzetbe kerül – a múltbeli sémák alapján automatikusan reagál, ahelyett, hogy új, szabad választásokat hozna. A módszer célja ennek az egységnek (az „Egy Agynak") a visszaállítása.</p>
 
@@ -104,8 +100,6 @@
     <div class="section-container">
       <h2>Recall Healing</h2>
       <p class="intro">A Recall Healing (Emlékezés általi gyógyulás) egy olyan holisztikus, rendszerszemléletű módszer, amely a betegségek, lelki elakadások és viselkedési minták mögött meghúzódó tudatalatti érzelmi konfliktusokat tárja fel és oldja fel. Alapítója Gilbert Renaud kanadai terapeuta, aki a módszert a Dr. Ryke Geerd Hamer-féle Új Germán Medicína (GNM), Claude Sabbah biológiai totál deprogramozása, valamint saját több évtizedes klinikai tapasztalatai alapján fejlesztette ki.</p>
-
-      <img src="images/recall.jpg" alt="Nyugodt konzultációs tér a Recall Healing üléshez" class="section-image">
 
       <h3>A módszer alapelve</h3>
       <p>A Recall Healing szerint a betegség nem a szervezet hibája vagy véletlenszerű meghibásodás, hanem az agy túlélési programja egy biológiai sokkra. Amikor egy egyén olyan intenzív stresszt, traumát vagy érzelmi konfliktust él meg, amelyet tudatosan képtelen feldolgozni vagy kifejezni, az agy – a túlélés érdekében – „letölti" ezt a feszültséget a testbe, és egy szerv szintjén jeleníti meg (somatisatio). A módszer alapvetése: „Ami nem jut el a tudatig, az biológiai formát ölt." Ha a páciens tudatosítja és kibeszéli a konfliktust, a testnek már nincs szüksége a fizikai tünetre a túléléshez, így elindulhat a valódi gyógyulás.</p>
@@ -148,8 +142,6 @@
       <h2>Művelnünk kell kertjeinket</h2>
       <p class="intro">Képzeld el, hogy a jelened és a jövőd egy gyönyörű, virágzó kert, ahol szeretnél végre megpihenni, élvezni a napsütést és leszüretelni a lédús gyümölcsöket. De a valóságban a növényeid folyton elszáradnak, felveri a gaz a birtokot, a talaj pedig csontszáraz és repedezett.</p>
 
-      <img src="images/garden-metaphor.jpg" alt="Gondozott, virágzó kert szimbolikus fényben" class="section-image">
-
       <div class="garden-steps">
         <article class="step">
           <div class="step-number">1</div>
@@ -177,7 +169,9 @@
     </div>
   </section>
 
-  <section id="tanulmanyok">
+  <!-- TODO: tartalom hiányzik ehhez a szekcióhoz, kapcsold vissza (.is-hidden
+  törlésével + nav-link visszaadásával) amint kész a szöveg -->
+  <section id="tanulmanyok" class="is-hidden">
     <div class="section-container">
       <h2>Önismeret és tanulmányok</h2>
     </div>
@@ -186,7 +180,9 @@
   <section id="contact">
     <div class="section-container">
       <h2>Kapcsolatfelvétel</h2>
-      <form id="contact-form" class="contact-form">
+      <!-- TODO: mailto ideiglenes megoldás, cseréld valódi form-backendre
+      (pl. Formspree, Web3Forms, Cloudflare Pages Function) amint van API kulcs -->
+      <form id="contact-form" class="contact-form" method="POST" action="mailto:info@szepesidaniel.hu" enctype="text/plain">
         <div class="form-group">
           <label for="name">Név *</label>
           <input type="text" id="name" name="name" required>
