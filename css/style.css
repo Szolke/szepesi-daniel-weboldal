@@ -224,12 +224,12 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 }
 
 .btn-primary {
-  background: var(--color-accent);
-  color: var(--color-text);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background: color-mix(in srgb, var(--color-accent) 85%, black);
+  background: color-mix(in srgb, var(--color-primary-dark) 85%, black);
   box-shadow: var(--shadow-md);
   transform: scale(1.05);
 }
