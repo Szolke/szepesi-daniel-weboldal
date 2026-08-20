@@ -263,6 +263,56 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
   padding: var(--spacing-xl);
 }
 
+.coaching-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-lg);
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+}
+
+.coaching-image {
+  min-height: 320px;
+}
+
+.coaching-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.coaching-content {
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) 0;
+}
+
+.coaching-content h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.coaching-content p {
+  margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .coaching-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .coaching-image {
+    min-height: 240px;
+  }
+
+  .coaching-content {
+    padding: var(--spacing-md);
+  }
+}
+
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -346,9 +396,43 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
   padding: var(--spacing-xl);
 }
 
+.kinezio-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.kinezio-image {
+  min-height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.kinezio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .kinezio-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .kinezio-image {
+    min-height: 240px;
+    order: -1;
+  }
+}
+
 #kinezio h2 {
   color: var(--color-white);
-  text-align: left;
+  text-align: center;
 }
 
 #kinezio h3 {
@@ -403,29 +487,126 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
   color: var(--color-primary-dark);
 }
 
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  margin: var(--spacing-lg) 0;
+.recall-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.pillar {
-  background: var(--color-white);
-  padding: var(--spacing-md);
-  border-radius: 8px;
-  box-shadow: var(--shadow-light);
-  border-top: 4px solid var(--color-primary);
+.recall-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
 }
 
-.pillar h4 {
+.recall-title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
   color: var(--color-primary-dark);
-  margin-bottom: var(--spacing-sm);
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .pillars {
+.recall-intro,
+.recall-body,
+.recall-subsection {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.recall-intro p,
+.recall-body p,
+.recall-subsection p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+/* --- Három pillér kártya --- */
+.recall-pillars {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+}
+
+.recall-pillar {
+  background-color: var(--color-mint-card);
+  border-top: 3px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 1.75rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recall-pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.recall-pillar__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.6rem;
+}
+
+.recall-pillar__text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* --- Alszekció --- */
+.recall-subsection {
+  margin-top: 3rem;
+}
+
+.recall-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 1.2rem;
+}
+
+/* --- Kiemelt idézet --- */
+.recall-quote {
+  margin: 2rem 0;
+  padding: 1.25rem 0 1.25rem 1.5rem;
+  border-left: 3px solid var(--color-accent);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-primary-dark);
+}
+
+/* --- CTA --- */
+.recall-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .recall-pillars {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .recall-title {
+    font-size: 1.9rem;
+  }
+
+  .recall-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .recall-quote {
+    padding-left: 1rem;
+    font-size: 1rem;
   }
 }
 
