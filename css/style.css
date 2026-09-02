@@ -391,8 +391,8 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 
 /* Kineziológia */
 #kinezio {
-  background: var(--color-primary-dark);
-  color: var(--color-white);
+  background: var(--color-bg);
+  color: var(--color-text);
   padding: var(--spacing-xl);
 }
 
@@ -403,13 +403,30 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
   align-items: stretch;
   max-width: 1100px;
   margin: 0 auto;
+  background: var(--color-primary-dark);
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+}
+
+.kinezio-content {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: var(--spacing-lg) 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.kinezio-content h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.kinezio-content p {
+  color: var(--color-text-on-dark);
+  margin-bottom: var(--spacing-sm);
 }
 
 .kinezio-image {
   min-height: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
 }
 
 .kinezio-image img {
@@ -428,20 +445,15 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
     min-height: 240px;
     order: -1;
   }
-}
 
-#kinezio h2 {
-  color: var(--color-white);
-  text-align: center;
+  .kinezio-content {
+    padding: var(--spacing-md);
+  }
 }
 
 #kinezio h3 {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   text-align: left;
-}
-
-#kinezio p {
-  color: var(--color-text-on-dark);
 }
 
 .tools,
