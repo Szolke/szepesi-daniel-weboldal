@@ -128,6 +128,92 @@ button:hover {
   color: var(--color-primary);
 }
 
+#navbar a.is-active {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* Dropdown: Módszerem */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-dropdown-toggle:hover {
+  color: var(--color-primary);
+  background: none;
+  box-shadow: none;
+}
+
+.nav-dropdown-toggle .caret {
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown.is-open .nav-dropdown-toggle .caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-toggle.is-active {
+  color: var(--color-primary);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xs) 0;
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  z-index: 101;
+}
+
+.nav-dropdown.is-open .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown-menu a {
+  padding: var(--spacing-xs) var(--spacing-md);
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    min-width: 0;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    display: flex;
+  }
+}
+
 /* Szekció-alapok */
 section {
   padding: var(--spacing-xl) var(--spacing-lg);
@@ -154,15 +240,10 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 /* Hero */
 #hero {
   position: relative;
-  min-height: calc(100vh - 60px);
   max-width: none;
   margin: 0;
   margin-top: 60px; /* kompenzálja a fixed #navbar magasságát, ami kikerült a flow-ból */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--color-white);
-  text-align: center;
   padding: var(--spacing-xl);
   overflow: hidden;
 }
@@ -186,13 +267,17 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 .hero-content h1 {
   font-size: var(--fs-h1);
   color: var(--color-white);
+  text-align: center;
   margin-bottom: var(--spacing-md);
+}
+
+.hero-content .cta-buttons {
+  justify-content: center;
 }
 
 .hero-content p {
   font-size: var(--fs-body);
-  max-width: 700px;
-  margin: 0 auto var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .quote-bubble {
@@ -200,8 +285,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: var(--spacing-lg) var(--spacing-md);
-  max-width: 700px;
-  margin: 0 auto var(--spacing-lg);
+  margin: 0 0 var(--spacing-lg);
   font-size: var(--fs-body);
   font-style: italic;
   color: var(--color-white);
@@ -215,6 +299,7 @@ section:nth-of-type(odd):nth-of-type(n+3) a {
 }
 
 .btn {
+  display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
   border: none;
   border-radius: 4px;

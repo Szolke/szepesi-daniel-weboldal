@@ -1,65 +1,47 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
 
-  const NAVBAR_OFFSET = 60; // a fixed #navbar magassága, ennyivel feljebb állunk meg
-
-  // Közös smooth scroll – a navbar anchor linkek és a hero CTA gombok is ezt használják
-  function smoothScrollTo(selector, onComplete) {
-    if (!selector || selector === '#') {
-      return;
-    }
-    const target = $(selector);
-    if (!target.length) {
-      return;
-    }
-    $('html, body').stop().animate({
-      scrollTop: target.offset().top - NAVBAR_OFFSET
-    }, 800).promise().done(function() {
-      if (onComplete) {
-        onComplete();
-      }
-    });
-  }
-
-  // Anchor link smooth scroll
-  $('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    smoothScrollTo(this.getAttribute('href'));
-  });
-
-  // Hero CTA gombok – <button> elemek, ezért kézzel navigálunk
-  $('.cta-buttons .btn-primary').on('click', function() {
-    smoothScrollTo('#contact', function() {
-      $('#name').trigger('focus');
+  // Nav dropdown: kattintásra nyit/zár, kívülre kattintva bezárul
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggle.closest('.nav-dropdown').classList.toggle('is-open');
     });
   });
 
-  $('.cta-buttons .btn-secondary').on('click', function() {
-    smoothScrollTo('#coaching');
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dropdown) {
+      dropdown.classList.remove('is-open');
+    });
   });
 
   // Form validation & submission
-  $('#contact-form').on('submit', function(e) {
-    const name = $('#name').val().trim();
-    const email = $('#email').val().trim();
-    const message = $('#message').val().trim();
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-    if (!name || !email || !message) {
-      e.preventDefault();
-      alert('Kérlek, töltsd ki az összes mezőt!');
-      return;
-    }
+      if (!name || !email || !message) {
+        e.preventDefault();
+        alert('Kérlek, töltsd ki az összes mezőt!');
+        return;
+      }
 
-    // Nincs preventDefault és nincs reset sem: a böngésző így tudja megnyitni
-    // a mailto: hivatkozást a kitöltött mezők tartalmával.
-    alert('Megnyitjuk az email kliensedet az üzeneteddel – kérlek onnan küldd el.');
-  });
+      // Nincs preventDefault és nincs reset sem: a böngésző így tudja megnyitni
+      // a mailto: hivatkozást a kitöltött mezők tartalmával.
+      alert('Megnyitjuk az email kliensedet az üzeneteddel – kérlek onnan küldd el.');
+    });
+  }
 
   // CTA button actions
-  $('.btn-primary, .btn-secondary').on('click', function() {
-    const $this = $(this);
-    $this.css('transform', 'scale(0.95)').delay(100).queue(function(next) {
-      $(this).css('transform', '');
-      next();
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btn.style.transform = 'scale(0.95)';
+      setTimeout(function() {
+        btn.style.transform = '';
+      }, 100);
     });
   });
 
